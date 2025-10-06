@@ -1,0 +1,7 @@
+:root {
+  /* Cores Neutras */
+  --cor-neutra-branco: hsl(0, 100%, 100%);
+  --cor-neutra-cinza-200: hsl(270, 3%, 87%); /* Cinza Claro / Light Gray */
+  --cor-neutra-cinza-400: hsl(212, 12%, 71%); /* Cinza Médio / Medium Gray */
+  --cor-neutra-roxo-950: hsl(278, 68%, 11%); /* Roxo Escuro / Dark Purple */
+}

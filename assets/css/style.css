@@ -1,0 +1,202 @@
+/* =================================================================== */
+/* 1. VARIÁVEIS CSS (Propriedades Customizadas) */
+/* =================================================================== */
+:root { /* Define variáveis globais (Custom Properties) que podem ser usadas em todo o CSS. */
+    /* Cores Neutras */
+    --cor-neutra-branco: hsl(0, 100%, 100%);
+    --cor-neutra-cinza-200: hsl(270, 3%, 87%); /* Cinza Claro / Light Gray */
+    --cor-neutra-cinza-400: hsl(212, 12%, 71%); /* Cinza Médio / Medium Gray */
+    --cor-neutra-roxo-950: hsl(278, 68%, 11%); /* Roxo Escuro / Dark Purple */
+}
+
+/* =================================================================== */
+/* 2. RESET BÁSICO E CONFIGURAÇÃO GLOBAL */
+/* =================================================================== */
+* { /* O seletor universal aplica as regras a TODOS os elementos. */
+    margin: 0; /* Remove a margem padrão. */
+    padding: 0; /* Remove o padding padrão. */
+    box-sizing: border-box; /* **Melhor Prática:** Inclui padding e border na largura/altura total do elemento. */
+    font-family: 'Space Grotesk', sans-serif; /* Define a fonte primária do projeto. */
+}
+
+/* =================================================================== */
+/* 3. LAYOUT PRINCIPAL (BODY e MAIN) */
+/* =================================================================== */
+body{
+    display: flex; /* **Início do Flexbox (1):** Torna o body um contêiner flexível. */
+    flex-direction: column; /* Organiza os filhos (main, attribution) verticalmente. */
+    
+    height: 100vh; /* Garante que o body ocupe 100% da altura visível da tela. */
+ 
+    
+    justify-content: center; /* Centraliza o conteúdo (o elemento <main>) horizontalmente. */
+    align-items: center; /* Centraliza o conteúdo (o elemento <main>) verticalmente. */
+}
+main{
+    display: flex;
+    flex-direction: row; /* Faz as colunas (filhos) ficarem lado a lado (layout horizontal). */
+    width: 100%; /* Ocupa a largura total do body. */
+    height: 100%; /* Ocupa 100% da altura do body (que é 100vh). */
+}
+
+/* =================================================================== */
+/* 4. COLUNAS DO LAYOUT */
+/* =================================================================== */
+#coluna-decorativa{
+    /* CONFIGURAÇÃO DE FUNDO COM IMAGEM */
+    background-image: url("/images/bg-main-desktop.png");
+    background-size: cover; /* Garante que a imagem cubra toda a área. */
+    background-repeat: no-repeat; /* Evita repetição da imagem. */
+    
+    /* LAYOUT DA COLUNA */
+    width: 25%; /* A coluna visual/decorativa ocupa 25% da largura da tela. */
+    height: 100%; /* Ocupa 100% da altura do elemento pai (main). */
+}
+
+#area-formulario{
+    background-color: var(--cor-neutra-branco); /* Define o fundo branco para esta área. */
+    width: 75%; /* Ocupa 75% da largura. */
+    height: 100%;
+    
+    /* ESTILIZAÇÃO */
+    border-radius: 15px; /* Arredonda as bordas. */
+    padding: 40px; /* Espaçamento interno. */
+    
+    /* ORGANIZAÇÃO DO CONTEÚDO INTERNO */
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo do formulário verticalmente. */
+    justify-content: center; /* Centraliza o conteúdo verticalmente. */
+    align-items: center; /* Centraliza o conteúdo horizontalmente. */
+}
+
+/* =================================================================== */
+/* 5. CARTÃO DA FRENTE (.card-front) */
+/* =================================================================== */
+.card-front{
+    /* IMAGEM E ESTILO BASE */
+    background-image: url("/images/bg-card-front.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* LAYOUT INTERNO */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    /* POSICIONAMENTO E DIMENSÕES */
+    margin-top: 100px; /* Afasta o cartão do topo (usado para posicionar). */
+    margin-left: 150px; /* Afasta o cartão da esquerda (usado para posicionar). */
+    position: relative; /* Mantém o cartão no fluxo, mas permite posicionar os filhos de forma absoluta. */
+    width: 450px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.377);
+    
+    color: var(--cor-neutra-branco); /* Define a cor do texto no cartão (branco). */
+}
+
+/* =================================================================== */
+/* 6. DETALHES DO CARTÃO DA FRENTE (Posicionamento Absoluto) */
+/* =================================================================== */
+#num{ /* Número do Cartão */
+    position: absolute; /* Tira do fluxo e posiciona relativo ao .card-front. */
+    top: 130px; 
+    font-size: 28px;
+    letter-spacing: 3px;
+}
+
+#nome{ /* Nome do Titular */
+    position: absolute;
+    bottom: 50px;
+    left: 40px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+} 
+
+#date{ /* Data de Validade */
+    position: absolute;
+    bottom: 50px;
+    right: 40px;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+#logo-card{
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    width: 70px;
+    height: 50px;
+}
+
+/* =================================================================== */
+/* 7. CARTÃO DE TRÁS (.card-back) */
+/* =================================================================== */
+.card-back{
+    /* CONFIGURAÇÃO DE FUNDO */
+    background-image: url("/images/bg-card-back.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* LAYOUT INTERNO */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* POSICIONAMENTO E DIMENSÕES */
+    position: relative; /* Mantém o elemento no fluxo (similar ao card-front). */
+    margin-left: 250px; /* Empurra o cartão para a direita. */
+    width: 450px;
+    height: 250px;
+    border-radius: 15px;
+    margin-top: 20px; /* Empurra o cartão para baixo. */
+
+    box-shadow:10px 10px 20px rgba(0, 0, 0, 0.377); /* Sombra. */
+}
+#cvc{ /* Número CVC no verso */
+    position: absolute;
+  
+    right: 70px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: var(--cor-neutra-branco);
+}
+
+#area-formulario{
+    margin-top: 50px; /* Espaçamento superior para afastar do topo. */
+    margin-left: 350px;
+    width: 100%; /* Ocupa toda a largura disponível na área do formulário. */
+    display: flex;
+    flex-direction: column; /* Organiza os campos do formulário verticalmente. */
+    gap: 30px; /* Espaçamento entre os campos do formulário. */
+}   
+#nome-num{
+
+    display: flex;
+    flex-direction: column; /* Organiza o nome e número verticalmente. */
+    gap: 10px; /* Espaçamento entre nome e número. */
+}
+
+
+
+#nome-num input{
+    width: 100%; /* Ocupa toda a largura do contêiner pai. */
+    padding: 10px; /* Espaçamento interno para melhor usabilidade. */
+    border: 1px solid var(--cor-neutra-cinza-400); /* Borda cinza média. */
+    border-radius: 5px; /* Bordas levemente arredondadas. */
+    font-size: 16px; /* Tamanho da fonte para legibilidade. */
+}
+/* =================================================================== */
+/* 8. ATRIBUIÇÃO (FOOTER) */
+/* =================================================================== */
+#attribution{
+    bottom: 10px; /* Tenta posicionar na parte inferior (provavelmente precisa de 'position: fixed'). */
+    font-size: 11px;
+    text-align: center;
+    
+    /* CORREÇÕES DE SINTAXE E VALOR */
+    height: px; /* **ERRO DE SINTAXE:** Esta propriedade não é válida, precisa de um valor (ex: 50px). */
+    opacity: 0,1; /* **ERRO DE VALOR:** Opacidade deve ser entre 0 e 1 (Use '1' para opaco). */
+}

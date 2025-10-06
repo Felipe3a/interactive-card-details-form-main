@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+
+<body>
+
+<main>
+
+   <div id="coluna-decorativa">
+
+     <div class="card-front">
+      <img id="logo-card" src="/images/card-logo.svg" alt="logo">
+
+  <p id="num">0000 0000 0000 0000</p>
+ <p id="nome"> Jane Appleseed</p>
+   <p id="date"> 00/00 </p>
+
+  
+</p>
+ </div>
+
+     <div class="card-back">
+
+<p id="cvc">000</p>
+  
+
+ </div>
+ 
+        </div>
+
+    <div id="area-formulario">
+      <form action="">
+        <div id="nome-num">
+        <label for="nome-input"> Cardholder Name </label><input type="text" id="nome-input" placeholder="Cardholder Name">
+       <label for="nim-input"> Card Number</label> <input type="number" id="num-input" placeholder="Card Number">
+</div>
+        <div id="data-cvc">
+
+          <div>
+          <input type="number" id="mes-input" placeholder="MM">
+          <input type="number" id="ano-input" placeholder="YY">
+          <input type="number" id="cvc-input" placeholder="CVC">
+          <input type="button" name="" id=""placeholder="Confirm" value="Confirm">
+          </div>
+
+      </form>
+        </div>
+
+
+</main>
+
+
+
+
+    <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> 
+
+
+ 
+
+ <!-- 0000 0000 0000 0000
+  Jane Appleseed
+  00/00
+
+  000
+
+  Cardholder Name
+  e.g. Jane Appleseed
+
+  Card Number
+  e.g. 1234 5678 9123 0000
+
+  Exp. Date (MM/YY)
+  MM
+  YY
+
+  CVC
+  e.g. 123
+
+  Confirm
+
+  Completed state start 
+
+  Thank you!
+  We've added your card details
+  Continue-->
+  
+  
+  <script src="/assets/js/script.js"></script>
+</body>
+</html>
