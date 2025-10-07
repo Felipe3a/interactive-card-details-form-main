@@ -164,6 +164,9 @@ main{
     color: var(--cor-neutra-branco);
 }
 
+
+
+
 #area-formulario{
     margin-top: 50px; /* Espaçamento superior para afastar do topo. */
     margin-left: 350px;
@@ -177,6 +180,7 @@ main{
     display: flex;
     flex-direction: column; /* Organiza o nome e número verticalmente. */
     gap: 10px; /* Espaçamento entre nome e número. */
+    width: 100%; /* Ocupa toda a largura do contêiner pai. */
 }
 
 
@@ -187,6 +191,34 @@ main{
     border: 1px solid var(--cor-neutra-cinza-400); /* Borda cinza média. */
     border-radius: 5px; /* Bordas levemente arredondadas. */
     font-size: 16px; /* Tamanho da fonte para legibilidade. */
+}
+
+#data-cvc{
+
+margin-top: 20px;
+height: 20px;
+
+
+}
+#mes-input, #ano-input, #cvc-input{
+    width: 100px; /* Largura fixa para os campos de data e CVC. */
+    padding: 10px; /* Espaçamento interno. */
+    border: 1px solid var(--cor-neutra-cinza-400); /* Borda cinza média. */
+    border-radius: 5px; /* Bordas levemente arredondadas. */
+    font-size: 16px; /* Tamanho da fonte para legibilidade. */
+    
+}
+
+#button-input{
+    width: 100%; /* Botão ocupa toda a largura do contêiner pai. */
+    padding: 15px; /* Espaçamento interno maior para botões. */
+    background-color: var(--cor-neutra-roxo-950); /* Cor de fundo roxa escura. */
+    color: var(--cor-neutra-branco); /* Texto branco. */
+    border: none; /* Remove a borda padrão do botão. */
+    border-radius: 5px; /* Bordas levemente arredondadas. */
+    font-size: 18px; /* Tamanho da fonte maior para destaque. */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável. */
+    margin-top: 20px;
 }
 /* =================================================================== */
 /* 8. ATRIBUIÇÃO (FOOTER) */
