@@ -77,7 +77,7 @@ main{
     background-image: url("/images/bg-card-front.png");
     background-position: center;
     background-repeat: no-repeat;
-    
+     background-size: cover; /* Garante que a imagem cubra toda a área. */
     /* LAYOUT INTERNO */
     display: flex;
     justify-content: center;
@@ -90,9 +90,10 @@ main{
     position: relative; /* Mantém o cartão no fluxo, mas permite posicionar os filhos de forma absoluta. */
     width: 450px;
     height: 250px;
-    border-radius: 15px;
+   
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.377);
-    
+     border-radius: 15px;
+     overflow: hidden; /* Garante que o conteúdo não ultrapasse as bordas arredondadas. */
     color: var(--cor-neutra-branco); /* Define a cor do texto no cartão (branco). */
 }
 
@@ -134,27 +135,40 @@ main{
 /* =================================================================== */
 /* 7. CARTÃO DE TRÁS (.card-back) */
 /* =================================================================== */
-.card-back{
+
+
+
+.card-back {
     /* CONFIGURAÇÃO DE FUNDO */
     background-image: url("/images/bg-card-back.png");
+    background-size: cover; /* Garante que a imagem cubra toda a área. */
     background-position: center;
     background-repeat: no-repeat;
+    
+    /* POSICIONAMENTO E DIMENSÕES */
+    position: relative;
+    margin-left: 250px; /* Posição para desktop */
+    margin-top: 20px;   /* Posição para desktop */
+    width: 450px;
+    height: 250px;
     
     /* LAYOUT INTERNO */
     display: flex;
     justify-content: center;
     align-items: center;
     
-    /* POSICIONAMENTO E DIMENSÕES */
-    position: relative; /* Mantém o elemento no fluxo (similar ao card-front). */
-    margin-left: 250px; /* Empurra o cartão para a direita. */
-    width: 450px;
-    height: 250px;
+    /* ESTILOS VISUAIS E CORREÇÃO DA BORDA BRANCA */
     border-radius: 15px;
-    margin-top: 20px; /* Empurra o cartão para baixo. */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.377);
+    
+    /* ESSA LINHA FORÇA A IMAGEM A SER CORTADA PELO border-radius */
+    overflow: hidden; 
 
-    box-shadow:10px 10px 20px rgba(0, 0, 0, 0.377); /* Sombra. */
+    /* SOLUÇÃO PARA COBRIR O VAZAMENTO DA BORDA BRANCA/IMAGEM */
+    /* Cria uma borda invisível que "limpa" o antialiasing */
+    
 }
+
 #cvc{ /* Número CVC no verso */
     position: absolute;
   
