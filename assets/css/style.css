@@ -53,20 +53,23 @@ main{
     height: 100%; /* Ocupa 100% da altura do elemento pai (main). */
 }
 
-#area-formulario{
+#direita{
     background-color: var(--cor-neutra-branco); /* Define o fundo branco para esta área. */
-    width: 75%; /* Ocupa 75% da largura. */
-    height: 100%;
-    
-    /* ESTILIZAÇÃO */
-    border-radius: 15px; /* Arredonda as bordas. */
     padding: 40px; /* Espaçamento interno. */
-    
     /* ORGANIZAÇÃO DO CONTEÚDO INTERNO */
     display: flex;
     flex-direction: column; /* Organiza o conteúdo do formulário verticalmente. */
     justify-content: center; /* Centraliza o conteúdo verticalmente. */
     align-items: center; /* Centraliza o conteúdo horizontalmente. */
+    margin-top: 50px; /* Espaçamento superior para afastar do topo. */
+    margin-left: 350px;
+    width: 100%; /* Ocupa toda a largura disponível na área do formulário. */
+    flex-direction: column; /* Organiza os campos do formulário verticalmente. */
+    gap: 30px; /* Espaçamento entre os campos do formulário. */
+
+
+
+     
 }
 
 /* =================================================================== */
@@ -182,12 +185,7 @@ main{
 
 
 #area-formulario{
-    margin-top: 50px; /* Espaçamento superior para afastar do topo. */
-    margin-left: 350px;
-    width: 100%; /* Ocupa toda a largura disponível na área do formulário. */
-    display: flex;
-    flex-direction: column; /* Organiza os campos do formulário verticalmente. */
-    gap: 30px; /* Espaçamento entre os campos do formulário. */
+ 
 }   
 #nome-num{
 
@@ -234,6 +232,25 @@ height: 20px;
     cursor: pointer; /* Muda o cursor para indicar que é clicável. */
     margin-top: 20px;
 }
+
+
+
+#complete{
+
+
+    flex-direction: column; /* Organiza o nome e número verticalmente. */
+    gap: 10px; /* Espaçamento entre nome e número. */
+    align-items: center;
+    color: var(--cor-neutra-roxo-950);
+    width: 70%; /* Ocupa toda a largura do contêiner pai. */
+   display: none;
+}
+ #complete p{
+
+    color: var(--cor-neutra-cinza-400);
+ }
+
+
 /* =================================================================== */
 /* 8. ATRIBUIÇÃO (FOOTER) */
 /* =================================================================== */
@@ -245,4 +262,104 @@ height: 20px;
     /* CORREÇÕES DE SINTAXE E VALOR */
     height: px; /* **ERRO DE SINTAXE:** Esta propriedade não é válida, precisa de um valor (ex: 50px). */
     opacity: 0,1; /* **ERRO DE VALOR:** Opacidade deve ser entre 0 e 1 (Use '1' para opaco). */
+}
+
+
+@media screen and (max-width: 780px) {
+    /* ------------------------------------------------------------- */
+    /* 1. LAYOUT PRINCIPAL: Mudar para COLUNA (Mobile-First) */
+    /* ------------------------------------------------------------- */
+    body {
+        /* Remove o 'justify-content' e 'align-items' do desktop, pois a tela é vertical */
+        height: auto; /* Permite que o body se estenda, não forçando 100vh */
+        min-height: 100vh;
+    }
+    main {
+        flex-direction: column; /* Coloca a Coluna Decorativa em cima, Form em baixo */
+        height: auto; /* Importante para não forçar a altura */
+    }
+
+    /* ------------------------------------------------------------- */
+    /* 2. COLUNA DECORATIVA (TOPO DO MOBILE) */
+    /* ------------------------------------------------------------- */
+    #coluna-decorativa {
+        width: 100%;
+        height:60vh; /* Usa viewport height para um tamanho consistente no topo */
+        background-image: url("/images/bg-main-mobile.png"); /* Usa a imagem mobile */
+        /* O background-size: cover já está correto */
+        /* background-size: cover; */
+    }
+
+    /* ------------------------------------------------------------- */
+    /* 3. CARTÕES: Reposicionar e Redimensionar */
+    /* ------------------------------------------------------------- */
+    
+    /* Container para os cartões no mobile: posiciona-os acima do formulário */
+    /* Isso permite que eles "invadam" a área do formulário e a área decorativa */
+    #area-cartoes { 
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        /* Usa margin-top negativo para puxar os cartões para cima, sobre a coluna decorativa */
+        margin-top: -100px; 
+        z-index: 10; /* Garante que os cartões fiquem sobre o formulário e a coluna */
+        position: relative; /* Cria um novo contexto para os filhos */
+    }
+
+    .card-front, .card-back {
+        /* Define novos tamanhos para o mobile */
+        width: 280px; 
+        height: 155px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-front {
+        /* Remove o posicionamento fixo do desktop */
+        margin: 0; 
+        /* Reposiciona na parte superior do container #area-cartoes */
+        position: relative; 
+        top: 0;
+        right: -30px; /* Desloca um pouco para a direita (efeito de sobreposição) */
+    }
+
+    .card-back {
+        /* Remove o posicionamento fixo do desktop */
+        
+        margin-top: 50px; /* Sobrepõe parcialmente o card-front */
+      
+    
+      
+    }
+
+    /* DETALHES DO CARTÃO: Reduzir a fonte no mobile */
+    #num {
+        top: 90px;
+        font-size: 18px; /* Fonte menor */
+        letter-spacing: 2px;
+    }
+    #nome, #date {
+        bottom: 20px;
+        font-size: 10px; /* Fonte menor */
+        letter-spacing: 1px;
+    }
+    #logo-card {
+        width: 50px; /* Logo menor */
+        height: 30px;
+    }
+    #cvc {
+        right: 30px;
+        font-size: 10px;
+    }
+
+    /* ------------------------------------------------------------- */
+    /* 4. FORMULÁRIO (#direita) */
+    /* ------------------------------------------------------------- */
+    #direita {
+        width: 90%; /* Largura fixa para mobile */
+        margin: 80px auto 30px auto; /* Centraliza horizontalmente e dá espaço */
+        padding: 0; /* Remove padding excessivo */
+        /* Garante que o formulário não seja centralizado verticalmente no mobile */
+        justify-content: flex-start; 
+    }
 }

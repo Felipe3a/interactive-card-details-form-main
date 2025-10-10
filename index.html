@@ -16,6 +16,7 @@
   </style>
 </head>
 
+
 <body>
 
 <main>
@@ -34,6 +35,9 @@
 
   
 </p>
+
+
+
  </div>
 
      <div class="card-back">
@@ -51,12 +55,15 @@
 
 
         
-    <div id="area-formulario">
+    <div id="direita">
+
+<div  id="area-formulario">
+
       <form action="">
         <div id="nome-num">
         <label for="nome-input"> Cardholder Name </label><input type="text" id="nome-input" placeholder="Cardholder Name" >
-       <label for="num-input"> Card Number</label> <input type="password" id="num-input" placeholder="Card Number"minlenght="16" maxlength="16">
-     </div>
+         <label for="num-input"> Card Number</label> <input type="password" id="num-input" placeholder="Card Number"minlenght="16" maxlength="16">
+        </div>
 
 
         <div id="data-cvc">
@@ -72,7 +79,26 @@
           <input type="button" name="" id="button-input"placeholder="Confirm" value="Confirm"  onclick="confirmar()">
 
       </form>
-    </div>
+</div>
+
+
+    
+
+</div>
+
+
+
+ <div id="complete">
+
+
+         <img src="/images/icon-complete.svg" alt="check">
+          <h1>THANK YOU!</h1>
+         <p >We've added your card details</p>
+          <input type="button" name="" id="button-input"placeholder="Confirm" value="Continue"  onclick="recarregarPagina() ">
+
+      </div>
+
+
 
 
 </main>

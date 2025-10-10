@@ -16,6 +16,10 @@ const displayCvc = document.getElementById("cvc");
 const toggleVisibilityButton = document.getElementById("toggle-visibility");
 
 
+
+const areaFormulario = document.getElementById('area-formulario'); 
+const completeDiv = document.getElementById('complete'); 
+
 // --- 2. Funções Auxiliares ---
 
 /**
@@ -103,4 +107,34 @@ function confirmar() {
 
   // Exibe o número MASCARADO no cartão após o sucesso
   displayNumber.textContent = maskCardNumber(cardValue);
+  areaFormulario.style.display = 'none';
+  completeDiv.style.display = 'flex'; 
 }
+
+
+
+
+
+
+// --- 2. FUNÇÃO PARA VOLTAR AO ESTADO INICIAL ---
+function resetarFormulario() {
+    // Oculta a div de sucesso
+    completeDiv.style.display = 'none'; 
+    
+    // Exibe novamente o formulário
+    areaFormulario.style.display = 'flex'; // ou 'block', dependendo de como você estilizou 'area-formulario'
+
+    // Opcional: Limpa os campos do formulário
+    form.reset(); 
+    
+    // Opcional: Resetar os números exibidos no cartão para "0000 0000..."
+    // (Isso depende de como você lida com os valores padrão no seu JS de interatividade)
+}
+
+
+function recarregarPagina() {
+    window.location.reload();
+}
+
+// Opcional: Adicionar um ouvinte para o botão de confirmação, se ele for um botão normal e não um submit.
+// document.getElementById('button-confirm').addEventListener('click', validarFormulario);
